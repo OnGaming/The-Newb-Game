@@ -1,0 +1,163 @@
+{
+	"objName": "Stage",
+	"variables": [{
+			"name": "mx",
+			"value": 157,
+			"isPersistent": false
+		},
+		{
+			"name": "my",
+			"value": -32,
+			"isPersistent": false
+		},
+		{
+			"name": "Score",
+			"value": 5,
+			"isPersistent": false
+		}],
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": 0,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "backdrop1",
+			"baseLayerID": 3,
+			"baseLayerMD5": "739b5e2a2435f6e1ec2993791b423146.png",
+			"bitmapResolution": 1,
+			"rotationCenterX": 240,
+			"rotationCenterY": 180
+		}],
+	"currentCostumeIndex": 0,
+	"penLayerMD5": "5c81a336fab8be57adc039a8a2b33ca9.png",
+	"penLayerID": 0,
+	"tempoBPM": 60,
+	"videoAlpha": 0.5,
+	"children": [{
+			"objName": "Sprite1",
+			"scripts": [[10,
+					10,
+					[["whenGreenFlag"], ["show"], ["wait:elapsed:from:", 1], ["hide"], ["broadcast:", "message1"]]]],
+			"sounds": [{
+					"soundName": "pop",
+					"soundID": 0,
+					"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+					"sampleCount": 258,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "costume1",
+					"baseLayerID": 1,
+					"baseLayerMD5": "f0354baa7f6a352deaa034ebe0418ba7.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 179,
+					"rotationCenterY": 58
+				}],
+			"currentCostumeIndex": 0,
+			"scratchX": -73,
+			"scratchY": 22,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 1,
+			"visible": false,
+			"spriteInfo": {
+			}
+		},
+		{
+			"objName": "Sprite2",
+			"scripts": [[10,
+					10,
+					[["whenIReceive", "message1"],
+						["setVar:to:", "Score", 0],
+						["doForever",
+							[["setVar:to:", "mx", ["mouseX"]],
+								["setVar:to:", "my", ["mouseY"]],
+								["wait:elapsed:from:", 1],
+								["gotoX:y:", ["readVariable", "mx"], ["readVariable", "my"]],
+								["doIf", ["|", ["touching:", "_mouse_"], ["touching:", "_edge_"]], [["stopScripts", "all"]]],
+								["changeVar:by:", "Score", 1]]]]]],
+			"sounds": [{
+					"soundName": "pop",
+					"soundID": 0,
+					"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+					"sampleCount": 258,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "costume1",
+					"baseLayerID": 2,
+					"baseLayerMD5": "0bfa50cc6992761830e5a7173f7efcfa.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 12,
+					"rotationCenterY": 22
+				}],
+			"currentCostumeIndex": 0,
+			"scratchX": 157,
+			"scratchY": -32,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 2,
+			"visible": true,
+			"spriteInfo": {
+			}
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "mx",
+			"color": 15629590,
+			"label": "mx",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 5,
+			"visible": false
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "my",
+			"color": 15629590,
+			"label": "my",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 32,
+			"visible": false
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "Score",
+			"color": 15629590,
+			"label": "Score",
+			"mode": 2,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 425,
+			"y": 1,
+			"visible": true
+		}],
+	"info": {
+		"videoOn": false,
+		"scriptCount": 2,
+		"flashVersion": "MAC 21,0,0,174",
+		"userAgent": "Scratch 2.0 Offline Editor",
+		"spriteCount": 2,
+		"swfVersion": "v447"
+	}
+}
